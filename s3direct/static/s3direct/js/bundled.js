@@ -6068,9 +6068,10 @@ const SparkMD5 = require('spark-md5');
               form                = new FormData(),
               csrfToken           = csrfInput ? csrfInput.value : Cookies.get(csrfCookieNameInput.value),
               headers             = {'X-CSRFToken': csrfToken };
+              filename_field      = element.querySelector("#id_filename")
 
         form.append('dest', dest)
-        form.append('name', file.name)
+        if (filename_field) {form.append('name', filename_field.value || file.name)} else {form.append('name', file.name)}
         form.append('type', file.type)
         form.append('size', file.size)
         request('POST', destinationCheckUrl, form, headers, element, function(status, response) {
