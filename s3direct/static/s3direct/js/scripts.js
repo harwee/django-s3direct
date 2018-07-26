@@ -181,7 +181,7 @@ const SparkMD5 = require('spark-md5');
               filename_field      = element.parentElement.querySelector("#id_filename")
 
         form.append('dest', dest)
-        if (filename_field) {form.append('name', filename_field.value+"."+file.name.split(".")[ile.name.split(".").length-1])} else {form.append('name', file.name)}
+        if (filename_field) {form.append('name', filename_field.value+"."+file.name.split(".")[file.name.split(".").length-1])} else {form.append('name', file.name)}
         form.append('type', file.type)
         form.append('size', file.size)
         request('POST', destinationCheckUrl, form, headers, element, function(status, response) {
