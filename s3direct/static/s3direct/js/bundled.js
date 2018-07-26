@@ -6067,8 +6067,8 @@ const SparkMD5 = require('spark-md5');
               signerUrl           = element.getAttribute('data-signing-url'),
               form                = new FormData(),
               csrfToken           = csrfInput ? csrfInput.value : Cookies.get(csrfCookieNameInput.value),
-              headers             = {'X-CSRFToken': csrfToken };
-              filename_field      = element.querySelector("#id_filename")
+              headers             = {'X-CSRFToken': csrfToken },
+              filename_field      = element.querySelector("#id_filename");
 
         form.append('dest', dest)
         if (filename_field) {form.append('name', filename_field.value || file.name)} else {form.append('name', file.name)}
