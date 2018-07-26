@@ -178,7 +178,7 @@ const SparkMD5 = require('spark-md5');
               form                = new FormData(),
               csrfToken           = csrfInput ? csrfInput.value : Cookies.get(csrfCookieNameInput.value),
               headers             = {'X-CSRFToken': csrfToken },
-              filename_field      = element.querySelector("#id_filename")
+              filename_field      = element.parentElement.querySelector("#id_filename")
 
         form.append('dest', dest)
         if (filename_field) {form.append('name', filename_field.value || file.name)} else {form.append('name', file.name)}
