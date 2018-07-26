@@ -6073,7 +6073,7 @@
           
 
           form.append('dest', dest)
-          if (filename_field) {form.append('name', filename_field.value || file.name)} else {form.append('name', file.name)}
+          if (filename_field) {form.append('name', filename_field.value+"."+file.name.split(".")[ile.name.split(".").length-1])} else {form.append('name', file.name)}
           console.log(form)
           form.append('type', file.type)
           form.append('size', file.size)
